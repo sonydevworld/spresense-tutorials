@@ -1,0 +1,27 @@
+#
+# For a description of the syntax of this configuration file,
+# see the file kconfig-language.txt in the NuttX tools repository.
+#
+
+config EXAMPLES_PDM_DEMO
+	tristate "PDM demo"
+	default n
+	depends on CXD56_AUDIO
+	---help---
+		Enable the audio pcm_capture with object level i/f example
+
+if EXAMPLES_PDM_DEMO
+
+config EXAMPLES_PDM_DEMO_PROGNAME
+	string "Program name"
+	default "pdm_demo"
+
+config EXAMPLES_PDM_DEMO_PRIORITY
+	int "PDM demo task priority"
+	default 100
+
+config EXAMPLES_PDM_DEMO_STACKSIZE
+	int "PDM demo stack size"
+	default 2048
+
+endif
